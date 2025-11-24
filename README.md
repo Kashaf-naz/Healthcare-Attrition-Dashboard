@@ -4,11 +4,11 @@ The dashboard highlights key trends across demographics, departments, job roles,
 
 ## 🚀 Features
 
--   **4-page interactive Power BI dashboard**\
--   **KPIs + drill-through analysis**\
--   **Department & role-level attrition insights**\
--   **Early-career employee risk detection**\
--   **Bookmarks for Key Insight pop-ups**\
+-   **4-page interactive Power BI dashboard**
+-   **KPIs + drill-through analysis**
+-   **Department & role-level attrition insights**
+-   **Early-career employee risk detection**
+-   **Bookmarks for Key Insight pop-ups**
 -   **Professional visual theme applied**
   
  ## ⚙️ Data Modeling
@@ -86,7 +86,7 @@ For a detailed view, download the full report PDF 👉 <a href= "https://github.
 # 📁 Project File
 Download and explore the full Power BI file:
 
-👉 <a href= "">Dashboard.pbix</a>
+👉 <a href= "https://github.com/Kashaf-naz/Healthcare-Attrition-Dashboard/blob/main/U.S.%20Healthcare%20Employee%20Attrition%20%26%20Engagement%20Dashboard.pbix">Dashboard.pbix</a>
 *(Open in **Power BI Desktop** to explore data modeling, DAX formulas, and interactive visuals.)*
 
 ## 👩‍💻 Author
@@ -95,6 +95,5 @@ Download and explore the full Power BI file:
 - 💼 www.linkedin.com/in/kashaf-naz
 
 
----
 
 ⭐ *If you find this project useful, consider giving it a star on GitHub!*
