@@ -1,93 +1,77 @@
-# 📊 Employee Attrition Analysis – Power BI Dashboard
-This project presents an end-to-end HR Analytics solution focused on identifying drivers of employee attrition in a healthcare organization.
-The dashboard highlights key trends across demographics, departments, job roles, and satisfaction levels.
 
-## 🚀 Features
+# 📊 Healthcare Employee Attrition Dashboard (Power BI)
 
--   **4-page interactive Power BI dashboard**
--   **KPIs + drill-through analysis**
--   **Department & role-level attrition insights**
--   **Early-career employee risk detection**
--   **Bookmarks for Key Insight pop-ups**
--   **Professional visual theme applied**
-  
- ## ⚙️ Data Modeling
-- Designed a **Star Schema** model connecting fact and dimension tables.
-- Created **relationships** using primary and foreign keys (EmployeeID).
-- Built several **DAX measures** such as:
-  - `Total Employees`
-  - `Attrition Count`
-  - `Attrition Rate`
-  - `Male and Female Ratio`
-  - `Attrition Rate`
-  - `Overtime Attrition`
-  - `Average Age`
-  - `Average Tenure Years`
-  - `Average Monthly Income`
-  - `Average Performance Rating`
-  - `Average Job Satisfaction`
+An end-to-end HR analytics project that looks at why employees leave a healthcare organisation and which groups HR should focus on first.
 
-## 📁 Dashboard Pages
+## Business Question
 
-### **1️⃣ Executive Summary**
+Why are employees leaving, and which groups should HR prioritise to reduce attrition?
 
--   Total employees, attrition count, attrition rate
--   Job & Shift level risk analysis
--   Gender, Education & department-level attrition
+## Key Findings
 
-### **2️⃣ Workforce Demographics**
+- Overall attrition is **11.87%** (199 leavers out of 1,676 employees).
+- Overtime employees leave at **29.2%**, versus **5.0%** for non-overtime staff.
+- Employees in their first 2 years leave at **44.68%**, and the rate falls steadily with tenure (16.82% at 3-5 years, 10.40% at 6-10, 6.16% at 11-15, 3.40% at 15+).
+- Employees aged 18-24 leave at **41%**, and entry-level staff at **22.87%**.
+- "Other" (16.29%) and Nurse (13.02%) are the job roles with the highest attrition.
+- Cardiology (13.94%) and Maternity (12.31%) have the highest department rates; Neurology is lowest (7.74%).
 
--   Gender distribution
--   Education field & marital status trends
--   Monthly income distribution
--   Department level attrition count of overtime employees
--   Tenure band & experience comparison
+## Recommendations
 
-### **3️⃣ Department & Role Insights**
+1. **Limit overtime:** cap overtime hours, share it fairly, review schedules.
+2. **Support new joiners and early-career staff:** buddy program, 30-60-90 day check-ins, clear training and career path.
+3. **Focus on Nurse and Other roles:** stay interviews with nurses; ask HR to break "Other" into specific roles.
+4. **Keep tracking:** record exit-interview reasons and review attrition by tenure each month.
 
--   Department-level attrition
--   Job role attrition ranking
--   Avg Job Satisfaction, Environment Satisfaction, Work-Life Balance
--   Identification of burnout-prone roles
+## Dashboard Pages
 
-### **4️⃣ Attrition Drill-Down**
+1. **Executive Overview:** headline KPIs, attrition by department, gender, job role, age band and shift, education field and job level.
+2. **Workforce Demographics:** workforce make-up, leavers who worked overtime, and attrition by tenure band and income band.
+3. **Department & Role Insights:** attrition counts, a department x job role heatmap, overtime share by job role, and satisfaction by department.
+4. **Drill-through page:** employee-level detail, reached by right-clicking a department or job role.
+5. **Rating scale reference:** explains the 1-4 satisfaction and performance scales.
+6. **Recommendations:** actions linked to each finding.
 
--   Detailed employee table
--   Drill-through from pages
--   Salary, job role, department, tenure & more
+![Executive Overview](images/Executive%20Overview.jpg)
+![Workforce Demographics](images/Workforce%20Demographics.jpg)
+![Department and Role Insights](images/Department%20%26%20role%20insights.jpg)
+![Drill-through Details](images/Drill%20Through%20Details.jpg)
+![Rating Scale Reference](images/Rating%20scale%20Bookmark.PNG)
+![Recommendations](images/Recommendation%20page.jpg)
 
-## 🔍 Key Findings
+## Data Modeling
 
--   Early-career employees (18--24) face the highest attrition.
--   Maternity and Cardiology departments show the highest attrition.
--   Neurology displays the best satisfaction levels.
--   Overtime employees experience significantly higher attrition
-    (burnout risk).
--   Roles with heavy workload such as **Nurse** and **Other** show high
-    attrition rates.
+- The source data was a single flat file. I restructured it into a star schema: a fact table (`Fact_EmployeeAttrition`) and dimension tables (`Dim_Employee`, `Dim_Education`, `Dim_Satisfaction`) related through `EmployeeID`, plus a `Tenure Band Table` for tenure grouping.
+- Created DAX measures such as `Total Employees`, `Attrition Count`, `Attrition Rate`, `Attrition % Overtime`, `Attrition % Non-Overtime`, `Average Age`, `Average Tenure Years`, `Average Monthly Income`, `Avg Job Satisfaction`, `Avg Environment Satisfaction`, `Avg Work Life Balance` and `Avg Performance Rating`.
+- Created calculated columns for grouping, such as age band, tenure band and income band.
 
-## 🛠 Tools Used
+## Data Preparation
 
--   **Power BI**
--   **Power Query**
--   **DAX**
--   **Data Modeling**
--   **Bookmarks & UI Design**
+- Checked for duplicate records, null values and incorrect data types in Power Query. No duplicates or nulls were found.
+- Standardised an inconsistent job role label ("Admin" and "Administrative") so the roles are counted correctly.
 
-## 📸 Dashboard Preview
+## Features
 
-<img width="994" height="557" alt="Executive Overview" src="https://github.com/user-attachments/assets/d433a2fb-a27d-4207-8e04-842e79657d34" />
-<img width="997" height="561" alt="Workforce Demographics" src="https://github.com/user-attachments/assets/50ac96eb-81d7-4193-8868-905e9a9f4acc" />
-<img width="995" height="559" alt="Department & role insights" src="https://github.com/user-attachments/assets/705e3881-e342-403b-ad6c-69eb315e773e" />
-<img width="965" height="543" alt="Drill Through Details" src="https://github.com/user-attachments/assets/a6498a42-04bf-4ce5-86c0-e7c709842fc7" />
+- Interactive slicers (gender, department, job role, job level, shift, overtime)
+- Drill-through to employee-level detail
+- Key Insights pop-up on the Executive Overview page
+- Consistent theme and navigation across pages
 
-For a detailed view, download the full report PDF 👉 <a href= "https://github.com/user-attachments/files/23727526/U.S.Healthcare.Employee.Attrition.Engagement.Dashboard.pdf">Dashboard.pdf</a>
+## Limitations
 
-# 📁 Project File
-Download and explore the full Power BI file:
+- "Other" is a role category in the source data and is not broken down further.
+- Some groups (for example the lowest income band) are small, so their rates should be treated as signals to investigate, not firm conclusions.
+- Findings show associations in this dataset, not proven causes.
 
-👉 <a href= "https://github.com/Kashaf-naz/Healthcare-Attrition-Dashboard/blob/main/U.S.%20Healthcare%20Employee%20Attrition%20%26%20Engagement%20Dashboard.pbix">Dashboard.pbix</a>
-*(Open in **Power BI Desktop** to explore data modeling, DAX formulas, and interactive visuals.)*
+## Data Source
+
+Kaggle dataset: [Employee Attrition for Healthcare](https://www.kaggle.com/datasets/jpmiller/employee-attrition-for-healthcare). Used for portfolio purposes. 
+The dataset contains employee and company data for analytics and machine learning, with Attrition as the target variable. It was supplied as a single flat file, which I restructured into a star schema. Used for portfolio purposes.
+
+## Tools
+
+Power BI, Power Query, DAX, data modeling, bookmarks and drill-through.
+
 
 ## 👩‍💻 Author
 **Kashaf Naz**  
